@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .models import Movie,Ratings, Profile
+from .models import Movie,Ratings
 from django.shortcuts import render
 from django import forms
 from django.contrib import messages
@@ -51,4 +51,4 @@ class movieAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Ratings)
-admin.site.register(Profile)
+#admin.site.register(Profile)

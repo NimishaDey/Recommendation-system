@@ -2,8 +2,8 @@ from django.http import HttpRequest
 from django.shortcuts import render,HttpResponse,redirect, HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User,Group
-from . forms import UserRegisterForm, ReviewForm, UserUpdateForm, ProfileUpdateForm
-from . models import Movie,Ratings, Profile
+from . forms import UserRegisterForm, ReviewForm
+from . models import Movie,Ratings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import requests
@@ -174,7 +174,7 @@ def signup(request):
     else:
         return HttpResponseRedirect('/SignIn')
 
-#Profile page
+'''#Profile page
 @login_required()
 def profile(request):
     Profile.objects.get_or_create(user=request.user)
@@ -194,7 +194,7 @@ def profile(request):
         'u_form': u_form,
         'p_form': p_form
     }
-    return render(request, 'profile.html', context)
+    return render(request, 'profile.html', context)'''
 
 
 

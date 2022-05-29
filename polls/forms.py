@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from .models import Ratings, Profile
+from .models import Ratings
 
 
 class UserRegisterForm(UserCreationForm):
@@ -18,7 +18,7 @@ class ReviewForm(forms.ModelForm):
         fields = ['subject', 'review', 'rating']
 
 
-class UserUpdateForm(forms.ModelForm):
+'''class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
 
     class Meta:
@@ -29,4 +29,4 @@ class UserUpdateForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image']
+        fields = ['image']'''
