@@ -1,0 +1,18 @@
+<!--Home Page-->
+{% extends 'base.html' %}
+{% block title %}Watch Hollywood movies online{% endblock title %}
+{% block body %}
+<header class="showcase">
+    {% if not user.is_authenticated %}
+        <div class="showcase-top">
+            <a href="/SignIn" class="btn btn-rounded">Sign In</a>
+        </div>
+    {% endif %}
+    <div class="showcase-content">
+        <h1>See what's next!</h1>
+        <h3>Watch anywhere. Cancel anytime.</h3>
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <a href="/SignUp" class="btn btn-xl">Get Started<i class="fas fa-chevron-right btn-icon"></i></a>
+    </div>
+</header>
+{% endblock body %}

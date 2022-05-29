@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NEW</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel= "stylesheet" type= "text/css" href="/static/style.css">
+</head>
+<body id="content">
+    <div class="results">
+      <center>
+        <h2 id="name" class="text-uppercase" style="font-family: 'Rowdies', cursive;">{{m.title}}</h2>
+      </center>
+    </div>
+    <br />
+    <div id="mycontent" class="container">
+        <div id="mcontent" class="row">
+            <div class="col-6">
+                <div class="poster">
+                    <img class="poster-lg" style="border-radius: 40px;" height="400px" width="400px" src="https://image.tmdb.org/t/p/w200{{ m.poster_path }}">
+                </div>
+            </div>
+            <div class="col-6">
+            <div id="details">
+                <br />
+                <h6 id="title" style="color:white;">TITLE: &nbsp;{{m.title}}</h6>
+                <h6 id="type" style="color:white;">TYPE: &nbsp;{{type}}</h6>
+                <h6 id="overview" style="color:white;max-width: 85%">OVERVIEW:
+                <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{m.overview}}</h6>
+                <h6 id="vote_average" style="color:white;">RATING: &nbsp;{{m.vote_average}}/10 ({{m.vote_count}} votes)</h6>
+                <h6 id="genres" style="color:white;">GENRE: &nbsp;
+                {% for genre in m.genres %}
+                    {{genre.name }}
+                {% endfor %}
+                </h6>
+                <h6 id="date" style="color:white;">RELEASE DATE: &nbsp;{{m.release_date}}</h6>
+                <h6 id="runtime" style="color:white;">RUNTIME: &nbsp;{{m.runtime}}</h6>
+                <h6 id="status" style="color:white;">STATUS: &nbsp;{{m.status}}</h6>
+                <a href="rating/" class="waves-effect waves-light btn"><i class="material-icons left">star</i>Rate</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    
+    
+</body>
+</html>

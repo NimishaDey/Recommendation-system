@@ -1,0 +1,25 @@
+<!--Sign In page-->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Sign In{% endblock title %}
+
+{% block other %}
+<header class="min-h-screen w-full bg-black bg-opacity-75 showcase relative border-gray-600 border-b-8 flex justify-center py-20 bg-no-repeat"  style="background-image: url('/static/background_img.jpg');">
+    <div class="z-10 min-h-full py-32 md:py-0 text-gray-100 w-6/12  flex items-center flex-col">
+        <form action="" method="POST" class="bg-black bg-opacity-70 min-h-full py-8 px-4 w-8/12 rounded-md">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4" style="color: white;">Sign In Now</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group" id="signin-button">
+                    <button class="btn">Sign In</button>
+                </div>
+                <div class="form-group">
+                    <small class="text-muted ml-3" >Don't have an account yet? <a href="/SignUp">Sign Up</a></small>
+                </div>
+            </form>
+        </div>
+    </header>
+{% endblock other %}

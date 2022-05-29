@@ -1,0 +1,24 @@
+<!--Search bar page-->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search{% endblock title %}
+
+{% block body %}
+<header class="min-h-screen w-full bg-black bg-opacity-75 showcase relative border-gray-600 border-b-8 flex justify-center py-20 bg-no-repeat"  style="background-image: url('/static/background_img.jpg');">
+    <div class="z-10 min-h-full py-32 md:py-0 text-gray-100 w-6/12  flex items-center flex-col">
+        <div class="showcase-contents">
+            <form action="/search_results/" method="GET">
+                <h1 class>Movies</h1>
+                <p class="info">Movies move us like nothing else can, whether they're scary, funny, dramatic, romantic or anywhere in-between. So many titles, so much to experience.</p>
+                <div class="form-group" style="margin-top: 30px;text-align: center;color: white;">
+                    <input type="text" name="q" class="movie form-control" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 80% height: 40%;color: #181818" required="required" />
+                    <br>
+                </div>
+                <div class="form-group" style="text-align: center;">
+                    <button class="btn btn-primary" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px;" >Enter</button><br><br>
+                </div>
+            </form> 
+        </div>
+    </div>
+</header>
+{% endblock body %}
