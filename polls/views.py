@@ -2,8 +2,8 @@ from django.http import HttpRequest
 from django.shortcuts import render,HttpResponse,redirect, HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User,Group
-from . forms import UserRegisterForm, ReviewForm
-from . models import Movie,Ratings
+from . forms import UserRegisterForm, ReviewForm, UserUpdateForm, ProfileUpdateForm
+from . models import Movie,Ratings, Profile
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import requests
@@ -177,7 +177,25 @@ def signup(request):
 #Profile page
 @login_required()
 def profile(request):
-    return render(request, 'profile.html')
+    Profile.objects.get_or_create(user=request.user)
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Your account has been updated!')
+            return redirect('profile')
+    else:
+
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+    context = {
+        'u_form': u_form,
+        'p_form': p_form
+    }
+    return render(request, 'profile.html', context)
+
 
 
 def explicit_recommend(u):
