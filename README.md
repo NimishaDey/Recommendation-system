@@ -25,6 +25,8 @@ Django, Python, HTML, CSS, Javascript
 - User can go through movie details obtained using TMDB API
 - User can give ratings to movies and it recommends based on the ratings
 
+## Video Demo
+https://drive.google.com/file/d/1vZ7TE3HBNtvTOyx1cDSoXXrVtHBHLM8A/view?usp=sharing
 
 ## Algorithm
 
